@@ -17,3 +17,9 @@
 * Commands:
 		- bundle exec rails generate rspec:install
 		- rails g model Todo title:string created_by:string
+		- rails g model Item name:string done:boolean todo:references
+
+* By adding todo:references we're telling the generator to set up an association with the Todo model. 
+	This will do the following:
+		- Add a foreign key column todo_id to the items table
+		- Setup a belongs_to association in the Item model
