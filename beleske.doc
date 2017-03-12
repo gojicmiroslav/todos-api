@@ -51,3 +51,7 @@
 * set_todo - callback method to find a todo by id. In the case where the record does not exist, ActiveRecord 	will throw an exception ActiveRecord::RecordNotFound. We'll rescue from this exception and return a 404 message.
 
 * In our create method in the TodosController, note that we're using create! instead of create. This way, the model will raise an exception ActiveRecord::RecordInvalid. This way, we can avoid deep nested if statements in the controller. Thus, we rescue from this exception in the ExceptionHandler module.
+
+* Include controllers helper modules
+		include Response
+  	include ExceptionHandler
