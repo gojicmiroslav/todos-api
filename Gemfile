@@ -31,7 +31,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 
   gem 'pry'
-  gem 'pry-byebug', '~>1.3.3'
+  gem 'pry-byebug'
   gem 'pry-remote'
   gem 'pry-rails'
 end
