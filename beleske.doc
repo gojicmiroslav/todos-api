@@ -22,6 +22,7 @@
 		- bundle exec rails g controller Items
 		- mkdir spec/requests && touch spec/requests/{todos_spec.rb,items_spec.rb} 
 		- touch spec/factories/{todos.rb,items.rb}
+		- mkdir spec/support && touch spec/support/request_spec_helper.rb
 
 * By adding todo:references we're telling the generator to set up an association with the Todo model. 
 	This will do the following:
