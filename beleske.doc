@@ -23,3 +23,7 @@
 	This will do the following:
 		- Add a foreign key column todo_id to the items table
 		- Setup a belongs_to association in the Item model
+		- bundle exec rails g controller Todos
+		- bundle exec rails g controller Items
+
+* we won't be writing any controller specs. We're going to write request specs instead.
