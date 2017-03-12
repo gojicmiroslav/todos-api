@@ -32,3 +32,22 @@
 * we won't be writing any controller specs. We're going to write request specs instead.
 
 * Request specs are designed to drive behavior through the full stack, including routing. This means they can hit the applications' HTTP endpoints as opposed to controller specs which call methods directly. Since we're building an API application, this is exactly the kind of behavior we want from our tests.
+
+* json_response - responds with JSON and an HTTP status code (200 by default). We can define this method in concerns folder.
+
+* Rails methods:
+		- head(status, options = {})
+				Returns a response that has no content (merely headers). The options argument is interpreted to be a hash of header names and values. This allows you to easily return a response that consists only of significant headers:
+				Example:
+					head :created, location: person_path(@person)
+					head :created, location: @person
+					
+					# It can also be used to return exceptional conditions:
+					return head(:method_not_allowed) unless request.post?
+					return head(:bad_request) unless valid_request?
+					render
+
+
+* set_todo - callback method to find a todo by id. In the case where the record does not exist, ActiveRecord 	will throw an exception ActiveRecord::RecordNotFound. We'll rescue from this exception and return a 404 message.
+
+* In our create method in the TodosController, note that we're using create! instead of create. This way, the model will raise an exception ActiveRecord::RecordInvalid. This way, we can avoid deep nested if statements in the controller. Thus, we rescue from this exception in the ExceptionHandler module.
