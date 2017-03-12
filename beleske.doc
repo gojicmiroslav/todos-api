@@ -13,3 +13,6 @@
 			GET /todos/:id/items			Get a todo item
 			PUT /todos/:id/items			Update a todo item
 			DELETE /todos/:id/items		Delete a todo item
+
+* Commands:
+		- bundle exec rails generate rspec:install
